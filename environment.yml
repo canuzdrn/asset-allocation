@@ -1,0 +1,17 @@
+name: ultramarin-canuz
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - ipykernel
+  - jupyterlab
+  - matplotlib[version='>=3.8']
+  - numpy[version='>=1.26']
+  - pandas[version='>=2.1']
+  - python=3.11
+  - scikit-learn[version='>=1.4']
+  - seaborn
+  - shap
+  - tqdm
+  - optuna
+  - xgboost=1.7.6
