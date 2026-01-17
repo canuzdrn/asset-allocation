@@ -37,10 +37,10 @@ project_root/
 ```bash
 # create environment
 conda env create -f environment.yml
-conda activate ultramarin-canuz
+conda activate canuz_env
 
 # make environment visible in Jupyter
-python -m ipykernel install --user --name ultramarin-canuz --display-name "ultramarin-canuz"
+python -m ipykernel install --user --name canuz_env --display-name "canuz_env"
 ```
 
 Then start JupyterLab:
