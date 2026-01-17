@@ -1,11 +1,11 @@
-# Ultramarin Coding Challenge (Can Uzduran)
+# Asset Allocation Challenge
 
 This repository contains a reproducible **machine learning pipeline** for a binary classification task on macro/market features.  
 All experiments are done **via Jupyter notebooks** — the Python scripts in `src/` provide reusable utilities for imputation and model training.
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 project_root/
@@ -30,9 +30,9 @@ project_root/
 
 ---
 
-## ⚙️ 1. Environment Setup
+## 1. Environment Setup
 
-> ✅ Recommended: use **Conda** and the provided `environment.yml`.
+> Recommended: use **Conda** and the provided `environment.yml`.
 
 ```bash
 # create environment
@@ -56,7 +56,7 @@ conda env update -f environment.yml --prune
 
 ---
 
-## 📊 2. Input Data
+## 2. Input Data
 
 Before running the notebooks, ensure the following files exist in the `data/` directory:
 
@@ -70,11 +70,11 @@ The helper function in `src/util_io.py` reads them using `index_col=0`, ensuring
 
 ---
 
-## 📓 3. Notebook Workflow
+## 3. Notebook Workflow
 
 Run notebooks **in this order**:
 
-### 🧹 A) `notebooks/preprocess.ipynb`
+### A) `notebooks/preprocess.ipynb`
 - Loads raw CSVs (`X_train`, `y_train`, `X_test`)
 - Runs imputation using functions from `src/preprocess.py`
 - Writes clean datasets to `data/`:
@@ -85,7 +85,7 @@ After this step, the datasets contain **no NaN values**.
 
 ---
 
-### 🚀 B) `notebooks/xgb.ipynb`
+### B) `notebooks/xgb.ipynb`
 - Loads `X_train_imp`, `y_train`, and `X_test_imp`
 - Trains an **XGBoost binary classifier** with:
   - Stratified K-Fold CV  
@@ -106,13 +106,13 @@ Also includes:
 
 ---
 
-### 📈 (Optional) `notebooks/eda.ipynb`
+### (Optional) `notebooks/eda.ipynb`
 Exploratory data analysis (missingness, distributions, correlations).  
 No outputs are saved from this notebook.
 
 ---
 
-## ⚙️ 4. Configurable Parameters (in `xgb.ipynb`)
+## 4. Configurable Parameters (in `xgb.ipynb`)
 
 | Parameter | Purpose | Example |
 |------------|----------|----------|
@@ -125,7 +125,7 @@ No outputs are saved from this notebook.
 
 ---
 
-## 💾 5. Outputs
+## 5. Outputs
 
 After training, results are written to:
 
@@ -138,7 +138,7 @@ data/
 
 ---
 
-## 🔁 6. Reproducibility
+## 6. Reproducibility
 
 - Random seeds are fixed for CV, splits, and model RNG.  
 - Imputation and model training are deterministic for the same seed.  
@@ -152,7 +152,7 @@ To fully reproduce:
 ---
 
 
-## ✅ 7. Deliverables
+## 7. Deliverables
 
 - `data/y_test.csv` (final predictions)
 - Optionally: plots and metrics from `notebooks/xgb.ipynb`
